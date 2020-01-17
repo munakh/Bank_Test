@@ -16,6 +16,11 @@ describe('Account', function(){
     account.withdrawAmount(5);
     expect(account.returnBalance()).toEqual(5);
   });
+
+  it('raises error if not enough money in account', function(){
+    var account = new Account(10);
+    expect(account.withdrawAmount(15)).toEqual("Not enough money in account");
+  });
 });
 
 // function testingReturnBalance() {

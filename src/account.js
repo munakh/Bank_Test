@@ -1,6 +1,7 @@
 (function(exports) {
   function Account(balance) {
     this.balance = balance;
+    // this.transactions = [];
   };
 
   Account.prototype.returnBalance = function(){
@@ -12,7 +13,10 @@
   };
 
   Account.prototype.withdrawAmount = function(amount){
-    return this.balance -= amount;
+    if (amount < this.balance) {
+      return this.balance -= amount;
+    }
+    return "Not enough money in account";
   };
 
   exports.Account = Account;
