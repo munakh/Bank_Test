@@ -11,5 +11,9 @@
     return this.balance += amount;
   };
 
+  Account.prototype.withdrawAmount = function(amount){
+    return this.balance -= amount;
+  };
+
   exports.Account = Account;
 })(this);

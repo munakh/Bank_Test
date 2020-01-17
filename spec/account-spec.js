@@ -5,11 +5,16 @@ describe('Account', function(){
     expect(account.returnBalance()).toEqual(account.balance);
   });
 
-  it('adds a deposit to the balance', function(){
+  it('deposits money to the balance', function(){
     var account = new Account(10);
-    // account.balance = 10
-    account.addDeposit(10)
+    account.addDeposit(10);
     expect(account.returnBalance()).toEqual(20);
+  });
+
+  it('withdraws money from the balance', function(){
+    var account = new Account(10);
+    account.withdrawAmount(5);
+    expect(account.returnBalance()).toEqual(5);
   });
 });
 
